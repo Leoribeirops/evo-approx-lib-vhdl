@@ -45,12 +45,10 @@ EvoApproxLib-VHDL/
 │
 ├── src/
 │   ├── adders/
-│   │   └── 16_signed_extended/
-│   │       └── pareto_pwr_mse/
-│   │           ├── add16se_26Q.vhd
-│   │           ├── add16se_29A.vhd
-│   │           ├── add16se_294.vhd
-│   │           └── ...
+│   │  ├── add16se_26Q.vhd
+│   │  ├── add16se_29A.vhd
+│   │  ├── add16se_294.vhd
+│   │  └── ...
 │   │
 │   └── top/
 │       └── Sum_EVO_teste.vhd
@@ -97,17 +95,6 @@ The file `Sum_EVO_teste_tb.vhd` implements:
 * Observation of absolute error and functional behavior.
 
 Input vectors and expected reference results are documented in `dados.txt` and quantitatively analyzed in `dados.xlsx`.
-
-### 4.3 Error Metrics
-
-The error metrics follow the standard nomenclature adopted in the approximate computing literature:
-
-* **MAE** — Mean Absolute Error
-* **MSE** — Mean Squared Error
-* **WCE** — Worst-Case Error
-* **EP** — Error Probability
-
-These metrics allow evaluating the impact of approximation at the operator level, prior to system-level integration.
 
 ---
 
