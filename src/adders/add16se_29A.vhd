@@ -1,0 +1,130 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity add16se_29A is
+    Port (
+        A : in STD_LOGIC_VECTOR(15 downto 0);
+        B : in STD_LOGIC_VECTOR(15 downto 0);
+        O : out STD_LOGIC_VECTOR(16 downto 0)
+    );
+end add16se_29A;
+
+architecture Behavioral of add16se_29A is
+    signal sig_42, sig_43, sig_44, sig_45, sig_46, sig_47, sig_48, sig_49, sig_50, sig_51 : STD_LOGIC;
+    signal sig_52, sig_53, sig_54, sig_55, sig_56, sig_57, sig_58, sig_59, sig_60, sig_61 : STD_LOGIC;
+    signal sig_62, sig_63, sig_64, sig_71, sig_72, sig_73, sig_74, sig_75, sig_76, sig_77 : STD_LOGIC;
+    signal sig_78, sig_79, sig_80, sig_81, sig_82, sig_83, sig_84, sig_85, sig_88, sig_90 : STD_LOGIC;
+    signal sig_91, sig_92, sig_93, sig_94, sig_95, sig_96, sig_99, sig_100, sig_101, sig_102 : STD_LOGIC;
+    signal sig_103, sig_104, sig_105, sig_108, sig_109, sig_110, sig_111, sig_116, sig_117, sig_118 : STD_LOGIC;
+    signal sig_119, sig_120, sig_121, sig_122, sig_123, sig_124, sig_125, sig_126, sig_127, sig_132 : STD_LOGIC;
+    signal sig_133, sig_134, sig_135, sig_136, sig_137, sig_138, sig_139, sig_140, sig_141, sig_142 : STD_LOGIC;
+    signal sig_143 : STD_LOGIC;
+begin
+
+    sig_42 <= A(5) and B(5);
+    sig_43 <= A(5) xor B(5);
+    sig_44 <= A(6) and B(6);
+    sig_45 <= A(6) xor B(6);
+    sig_46 <= A(7) and B(7);
+    sig_47 <= A(7) xor B(7);
+    sig_48 <= A(8) and B(8);
+    sig_49 <= A(8) xor B(8);
+    sig_50 <= A(9) and B(9);
+    sig_51 <= A(9) xor B(9);
+    sig_52 <= A(10) and B(10);
+    sig_53 <= A(10) xor B(10);
+    sig_54 <= A(11) and B(11);
+    sig_55 <= A(11) xor B(11);
+    sig_56 <= A(12) and B(12);
+    sig_57 <= A(12) xor B(12);
+    sig_58 <= A(13) and B(13);
+    sig_59 <= A(13) xor B(13);
+    sig_60 <= A(14) and B(14);
+    sig_61 <= A(14) xor B(14);
+    sig_62 <= A(15) and B(15);
+    sig_63 <= A(15) xor B(15);
+    sig_64 <= A(15) xor B(15);
+
+    sig_71 <= sig_45 and sig_42;
+    sig_72 <= sig_45 and sig_43;
+    sig_73 <= sig_44 or sig_71;
+    sig_74 <= sig_49 and sig_46;
+    sig_75 <= sig_49 and sig_47;
+    sig_76 <= sig_48 or sig_74;
+    sig_77 <= sig_53 and sig_50;
+    sig_78 <= sig_53 and sig_51;
+    sig_79 <= sig_52 or sig_77;
+    sig_80 <= sig_57 and sig_54;
+    sig_81 <= sig_57 and sig_55;
+    sig_82 <= sig_56 or sig_80;
+    sig_83 <= sig_61 and sig_58;
+    sig_84 <= sig_61 and sig_59;
+    sig_85 <= sig_60 or sig_83;
+
+    sig_88 <= sig_72 and A(4);
+    sig_90 <= sig_73 or sig_88;
+    sig_91 <= sig_78 and sig_76;
+    sig_92 <= sig_78 and sig_75;
+    sig_93 <= sig_79 or sig_91;
+    sig_94 <= sig_84 and sig_82;
+    sig_95 <= sig_84 and sig_81;
+    sig_96 <= sig_85 or sig_94;
+
+    sig_99 <= sig_95 and sig_93;
+    sig_100 <= sig_95 and sig_92;
+    sig_101 <= sig_96 or sig_99;
+    sig_102 <= sig_100 and sig_90;
+    sig_103 <= sig_101 or sig_102;
+    sig_104 <= sig_92 and sig_90;
+    sig_105 <= sig_93 or sig_104;
+    sig_108 <= sig_75 and sig_90;
+    sig_109 <= sig_76 or sig_108;
+    sig_110 <= sig_81 and sig_105;
+    sig_111 <= sig_82 or sig_110;
+
+    sig_116 <= sig_43 and A(4);
+    sig_117 <= sig_42 or sig_116;
+    sig_118 <= sig_47 and sig_90;
+    sig_119 <= sig_46 or sig_118;
+    sig_120 <= sig_51 and sig_109;
+    sig_121 <= sig_50 or sig_120;
+    sig_122 <= sig_55 and sig_105;
+    sig_123 <= sig_54 or sig_122;
+    sig_124 <= sig_59 and sig_111;
+    sig_125 <= sig_58 or sig_124;
+    sig_126 <= sig_63 and sig_103;
+    sig_127 <= sig_62 or sig_126;
+
+    sig_132 <= sig_43 xor A(4);
+    sig_133 <= sig_45 xor sig_117;
+    sig_134 <= sig_47 xor sig_90;
+    sig_135 <= sig_49 xor sig_119;
+    sig_136 <= sig_51 xor sig_109;
+    sig_137 <= sig_53 xor sig_121;
+    sig_138 <= sig_55 xor sig_105;
+    sig_139 <= sig_57 xor sig_123;
+    sig_140 <= sig_59 xor sig_111;
+    sig_141 <= sig_61 xor sig_125;
+    sig_142 <= sig_63 xor sig_103;
+    sig_143 <= sig_64 xor sig_127;
+
+    O(16) <= sig_143;
+    O(15) <= sig_142;
+    O(14) <= sig_141;
+    O(13) <= sig_140;
+    O(12) <= sig_139;
+    O(11) <= sig_138;
+    O(10) <= sig_137;
+    O(9)  <= sig_136;
+    O(8)  <= sig_135;
+    O(7)  <= sig_134;
+    O(6)  <= sig_133;
+    O(5)  <= sig_132;
+    O(4)  <= B(4);
+    O(3)  <= A(3);
+    O(2)  <= A(2);
+    O(1)  <= A(0);
+    O(0)  <= sig_50;
+
+end Behavioral;

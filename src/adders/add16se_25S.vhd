@@ -1,0 +1,99 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity add16se_25S is
+    Port (
+        A : in STD_LOGIC_VECTOR(15 downto 0);
+        B : in STD_LOGIC_VECTOR(15 downto 0);
+        O : out STD_LOGIC_VECTOR(16 downto 0)
+    );
+end add16se_25S;
+
+architecture Behavioral of add16se_25S is
+    signal sig_44, sig_47, sig_49, sig_52, sig_54, sig_55, sig_59, sig_60, sig_61, sig_62 : STD_LOGIC;
+    signal sig_63, sig_64, sig_65, sig_66, sig_67, sig_68, sig_69, sig_70, sig_71, sig_72 : STD_LOGIC;
+    signal sig_73, sig_74, sig_75, sig_76, sig_77, sig_78, sig_79, sig_80, sig_81, sig_82 : STD_LOGIC;
+    signal sig_83, sig_84, sig_85, sig_86, sig_87, sig_88, sig_89, sig_90, sig_91, sig_92 : STD_LOGIC;
+    signal sig_93, sig_94, sig_95, sig_96, sig_97, sig_98, sig_99, sig_100, sig_101, sig_102 : STD_LOGIC;
+    signal sig_103, sig_104, sig_105, sig_106, sig_107, sig_108, sig_109, sig_110 : STD_LOGIC;
+begin
+
+    sig_44 <= not (B(2) or B(4));
+    sig_47 <= not sig_44;
+    sig_49 <= not (A(4) or B(2));
+    sig_52 <= not sig_49;
+    sig_54 <= A(5) xor B(5);
+    sig_55 <= A(5) and B(5);
+    sig_59 <= A(6) xor B(6);
+    sig_60 <= A(6) and B(6);
+    sig_61 <= sig_59 and sig_55;
+    sig_62 <= sig_59 xor sig_55;
+    sig_63 <= sig_60 or sig_61;
+    sig_64 <= A(7) xor B(7);
+    sig_65 <= A(7) and B(7);
+    sig_66 <= sig_64 and sig_63;
+    sig_67 <= sig_64 xor sig_63;
+    sig_68 <= sig_65 or sig_66;
+    sig_69 <= A(8) xor B(8);
+    sig_70 <= A(8) and B(8);
+    sig_71 <= sig_69 and sig_68;
+    sig_72 <= sig_69 xor sig_68;
+    sig_73 <= sig_70 or sig_71;
+    sig_74 <= A(9) xor B(9);
+    sig_75 <= A(9) and B(9);
+    sig_76 <= sig_74 and sig_73;
+    sig_77 <= sig_74 xor sig_73;
+    sig_78 <= sig_75 or sig_76;
+    sig_79 <= A(10) xor B(10);
+    sig_80 <= A(10) and B(10);
+    sig_81 <= sig_79 and sig_78;
+    sig_82 <= sig_79 xor sig_78;
+    sig_83 <= sig_80 or sig_81;
+    sig_84 <= A(11) xor B(11);
+    sig_85 <= A(11) and B(11);
+    sig_86 <= sig_84 and sig_83;
+    sig_87 <= sig_84 xor sig_83;
+    sig_88 <= sig_85 or sig_86;
+    sig_89 <= A(12) xor B(12);
+    sig_90 <= A(12) and B(12);
+    sig_91 <= sig_89 and sig_88;
+    sig_92 <= sig_89 xor sig_88;
+    sig_93 <= sig_90 or sig_91;
+    sig_94 <= A(13) xor B(13);
+    sig_95 <= A(13) and B(13);
+    sig_96 <= sig_94 and sig_93;
+    sig_97 <= sig_94 xor sig_93;
+    sig_98 <= sig_95 or sig_96;
+    sig_99 <= A(14) xor B(14);
+    sig_100 <= A(14) and B(14);
+    sig_101 <= sig_99 and sig_98;
+    sig_102 <= sig_99 xor sig_98;
+    sig_103 <= sig_100 or sig_101;
+    sig_104 <= A(15) xor B(15);
+    sig_105 <= A(15) and B(15);
+    sig_106 <= sig_104 and sig_103;
+    sig_107 <= sig_104 xor sig_103;
+    sig_108 <= sig_105 or sig_106;
+    sig_109 <= A(15) xor B(15);
+    sig_110 <= sig_109 xor sig_108;
+
+    O(16) <= sig_110;
+    O(15) <= sig_107;
+    O(14) <= sig_102;
+    O(13) <= sig_97;
+    O(12) <= sig_92;
+    O(11) <= sig_87;
+    O(10) <= sig_82;
+    O(9)  <= sig_77;
+    O(8)  <= sig_72;
+    O(7)  <= sig_67;
+    O(6)  <= sig_62;
+    O(5)  <= sig_54;
+    O(4)  <= sig_52;
+    O(3)  <= sig_47;
+    O(2)  <= sig_104;
+    O(1)  <= sig_65;
+    O(0)  <= sig_78;
+
+end Behavioral;

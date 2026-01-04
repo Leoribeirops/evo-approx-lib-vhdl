@@ -1,0 +1,16 @@
+# Simulation and synthesis artifacts
+*.cf
+*.o
+*.log
+*.vcd
+*.fst
+*.wlf
+*.ghw
+
+# Tool-specific directories
+work/
+sim/
+build/
+output/
+
+# Temporary files
